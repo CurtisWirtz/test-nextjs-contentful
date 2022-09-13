@@ -2,11 +2,16 @@ import { client } from "./client";
 import { postReducer } from "./utils";
 
 export const getPosts = async () => {
-  const posts = await client.getEntries({ content_type: "blogPosts" });
-  // console.log(posts);
-  posts.items.map(post => {
-    post.fields.blogPosts = [];
-    return post;
+  const res = await client.getEntries({ content_type: "blogPosts" });
+  const rawPosts = res.items;
+
+  console.log(rawPosts);
+
+  const posts = rawPosts.map(rawPost => {
+    console.log(rawPost);
+    // post.fields.blogPosts = [];
+    return postReducer(rawPost);
   });
-  return posts.items;
+
+  return posts;
 };

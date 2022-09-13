@@ -1,4 +1,5 @@
 export const imageReducer = image => {
+  console.log(image);
   return {
     url: `https:${image.fields.file.url}`,
     alt: image.fields.title,

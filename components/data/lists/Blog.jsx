@@ -6,7 +6,7 @@ const Blog = ({ posts }) => {
   return (
     <div>
       {posts.posts.map(post => (
-        <BlogCard post={post} key={post.sys.id} />
+        <BlogCard post={post} key={post.id} />
       ))}
     </div>
   );
