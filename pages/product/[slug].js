@@ -9,7 +9,7 @@ import { client } from "../../datalayer/contentful/client";
 // });
 
 export default function ProductPage(props) {
-  console.log(props);
+  // console.log(props);
   if (props.error) {
     return (
       <div>
